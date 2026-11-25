@@ -17,7 +17,6 @@ const SMALL_SIZE = 30;
 
 const readNavH = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 76;
 
-
 function pillDrift(nav: HTMLElement | null) {
   if (!nav) return 0;
   const stage = nav.querySelector('.gooey-nav__stage');
@@ -46,7 +45,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
   const [menuShown, setMenuShown] = useState(false);
   const pendingHash = useRef<string | null>(null);
   const [navKey, setNavKey] = useState(0);
-
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -131,7 +129,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     };
   }, []);
 
-
   useEffect(() => {
     const root = rootRef.current;
     const close = document.querySelector('.close');
@@ -151,7 +148,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     };
   }, [ready]);
 
-
   useEffect(() => {
     const update = () => {
       const els = ITEMS.map(item => document.querySelector<HTMLElement>(item.href));
@@ -166,7 +162,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     update();
     return () => st.kill();
   }, []);
-
 
   useEffect(() => {
     let t = 0;
@@ -189,7 +184,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     };
   }, []);
 
-
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 901px)');
     const onChange = () => {
@@ -204,7 +198,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     return () => mq.removeEventListener('change', onChange);
   }, []);
 
-
   useEffect(() => {
     const lenis = getLenis();
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -214,7 +207,6 @@ export default function Header({ ready = true }: { ready?: boolean }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [menuOpen]);
-
 
   useEffect(() => {
     if (!menuOpen) { setMenuShown(false); return; }

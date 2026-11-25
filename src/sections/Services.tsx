@@ -55,7 +55,6 @@ export default function Services() {
 
   return (
     <section id="servicos" ref={ref} className="svc" aria-labelledby="svc-title">
-      {}
       <div className="svc__stage">
         <div className="wrap svc__grid">
           <div className="svc__left">

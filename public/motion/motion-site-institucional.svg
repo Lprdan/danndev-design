@@ -6,7 +6,7 @@
   </defs>
 
   <style>
-    /* Paleta danndev — preto dominante, cinza, branco, ciano claro */
+
     .frame  { fill:#0b0e10; stroke:#2a3034; stroke-width:1; }
     .white  { fill:#e6e9eb; }
     .gray   { fill:#4a5156; }
@@ -15,7 +15,6 @@
     .cyan   { fill:#2ee6df; }
     .txt    { font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; font-size:8.5px; }
 
-    /* Loop de 8s — tudo sincronizado no mesmo ciclo */
     .a { animation-duration:8s; animation-iteration-count:infinite;
          animation-timing-function:cubic-bezier(.2,.7,.2,1); }
     .bar { transform-box:fill-box; transform-origin:0 50%; }
@@ -66,11 +65,10 @@
     }
   </style>
 
-  <!-- Janela do navegador (fica fixa) -->
   <rect class="frame" x="0.5" y="0.5" width="319" height="199" rx="8"/>
 
   <g class="content a">
-    <!-- Navbar -->
+
     <g class="nav a">
       <circle cx="18" cy="21" r="5" fill="none" stroke="#e6e9eb" stroke-width="1.2"/>
       <text class="txt" x="128" y="24" fill="#c9cfd3">Início</text>
@@ -78,7 +76,6 @@
       <text class="txt" x="184" y="24" fill="#c9cfd3">Serviços</text>
     </g>
 
-    <!-- Botão Contato + onda do clique -->
     <rect class="ring ctr a" x="240" y="10" width="58" height="22" rx="11" fill="none" stroke="#2ee6df" stroke-width="1.2"/>
     <g class="nav a">
       <g class="press ctr a">
@@ -87,14 +84,12 @@
       </g>
     </g>
 
-    <!-- Hero: título, texto e botão -->
     <rect class="white bar t1 a" x="14" y="46" width="150" height="11" rx="2"/>
     <rect class="white bar t2 a" x="14" y="62" width="104" height="11" rx="2"/>
     <rect class="gray bar p1 a" x="14" y="86" width="150" height="4" rx="2"/>
     <rect class="gray bar p2 a" x="14" y="96" width="106" height="4" rx="2"/>
     <rect class="btn2 ctr a" x="14" y="113" width="44" height="14" rx="7" fill="none" stroke="#cfd4d7" stroke-width="1.2"/>
 
-    <!-- Imagem com o arco "nascendo" -->
     <g class="img a">
       <rect x="178" y="44" width="128" height="88" rx="4" fill="#141a1d" stroke="#2a3034"/>
       <g clip-path="url(#imgClip)">
@@ -102,7 +97,6 @@
       </g>
     </g>
 
-    <!-- Cards de serviços (fade-in ao rolar) -->
     <g class="c1 a">
       <rect class="panel" x="14" y="144" width="92" height="42" rx="3"/>
       <rect class="dim" x="24" y="156" width="40" height="4" rx="2" fill="#3a4146"/>
@@ -120,7 +114,6 @@
     </g>
   </g>
 
-  <!-- Cursor -->
   <path class="cursor a" d="M0 0 L0 13 L3.5 9.8 L6 15 L8.2 14 L5.8 9 L10 9 Z"
         fill="#ffffff" stroke="#05080a" stroke-width="0.9" stroke-linejoin="round"/>
 </svg>

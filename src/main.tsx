@@ -6,6 +6,9 @@ import './styles/base.css';
 import './styles/sections.css';
 import App from './App';
 import { beginPreload } from './lib/preload';
+import { consoleSignature } from './lib/console';
+
+consoleSignature();
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) beginPreload();
 

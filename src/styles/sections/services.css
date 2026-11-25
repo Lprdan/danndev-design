@@ -80,7 +80,6 @@
 
 .svc__head-m { display: none; }
 
-
 @media (max-width: 959px) {
   .svc__left { display: none; }
   .svc__grid { grid-template-columns: minmax(0, 1fr); }

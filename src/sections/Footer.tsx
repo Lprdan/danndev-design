@@ -9,7 +9,6 @@ export default function Footer() {
   const wmRef = useRef<HTMLDivElement>(null);
   const year = new Date().getFullYear();
 
-
   useLayoutEffect(() => {
     const wm = wmRef.current;
     const box = wm?.parentElement;
@@ -48,7 +47,6 @@ export default function Footer() {
       });
     }
   });
-
 
   const onMove = (e: React.PointerEvent<HTMLElement>) => {
     const wm = wmRef.current;
