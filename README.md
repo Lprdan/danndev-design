@@ -4,7 +4,6 @@
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,ts,vite,html,css,nodejs,npm&perline=7" alt="React, TypeScript, Vite, HTML, CSS, Node.js, npm" />
 </p>
-<br>
 <p align="center"><b>Stacks</b></p>
 <hr>
 <br>
