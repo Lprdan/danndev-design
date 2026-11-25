@@ -1,6 +1,5 @@
 <h1 align="center">© 2026 danndev - danndev.com.br</h1>
 
-<hr>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,ts,vite,html,css,nodejs,npm&perline=7" alt="React, TypeScript, Vite, HTML, CSS, Node.js, npm" />
