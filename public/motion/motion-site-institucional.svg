@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="Animação: um site institucional sendo montado e o visitante clicando em Contato">
+  <defs>
+    <clipPath id="imgClip">
+      <rect x="178" y="44" width="128" height="88" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* Paleta danndev — preto dominante, cinza, branco, ciano claro */
+    .frame  { fill:#0b0e10; stroke:#2a3034; stroke-width:1; }
+    .white  { fill:#e6e9eb; }
+    .gray   { fill:#4a5156; }
+    .dim    { fill:#2a3034; }
+    .panel  { fill:#121719; stroke:#262c30; stroke-width:1; }
+    .cyan   { fill:#2ee6df; }
+    .txt    { font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; font-size:8.5px; }
+
+    /* Loop de 8s — tudo sincronizado no mesmo ciclo */
+    .a { animation-duration:8s; animation-iteration-count:infinite;
+         animation-timing-function:cubic-bezier(.2,.7,.2,1); }
+    .bar { transform-box:fill-box; transform-origin:0 50%; }
+    .ctr { transform-box:fill-box; transform-origin:50% 50%; }
+
+    .content { animation-name:out; }
+    .nav     { animation-name:nav; }
+    .t1 { animation-name:grow1; }
+    .t2 { animation-name:grow2; }
+    .p1 { animation-name:grow3; }
+    .p2 { animation-name:grow4; }
+    .btn2 { animation-name:btn2; }
+    .img  { animation-name:img; }
+    .sun  { animation-name:sun; }
+    .c1 { animation-name:card1; }
+    .c2 { animation-name:card2; }
+    .c3 { animation-name:card3; }
+    .press { animation-name:press; }
+    .ring  { animation-name:ring; }
+    .cursor { animation-name:cursor; transform-box:fill-box; transform-origin:0 0; }
+
+    @keyframes out   { 0%,88%{opacity:1} 96%,100%{opacity:0} }
+    @keyframes nav   { 0%,3%{opacity:0;transform:translateY(-3px)} 10%,100%{opacity:1;transform:none} }
+    @keyframes grow1 { 0%,8%{transform:scaleX(0)}  16%,100%{transform:scaleX(1)} }
+    @keyframes grow2 { 0%,12%{transform:scaleX(0)} 20%,100%{transform:scaleX(1)} }
+    @keyframes grow3 { 0%,18%{transform:scaleX(0)} 24%,100%{transform:scaleX(1)} }
+    @keyframes grow4 { 0%,20%{transform:scaleX(0)} 26%,100%{transform:scaleX(1)} }
+    @keyframes btn2  { 0%,24%{opacity:0;transform:scale(.8)} 29%,100%{opacity:1;transform:none} }
+    @keyframes img   { 0%,14%{opacity:0} 22%,100%{opacity:1} }
+    @keyframes sun   { 0%,20%{transform:translateY(36px)} 36%,100%{transform:none} }
+    @keyframes card1 { 0%,30%{opacity:0;transform:translateY(8px)} 38%,100%{opacity:1;transform:none} }
+    @keyframes card2 { 0%,33%{opacity:0;transform:translateY(8px)} 41%,100%{opacity:1;transform:none} }
+    @keyframes card3 { 0%,36%{opacity:0;transform:translateY(8px)} 44%,100%{opacity:1;transform:none} }
+    @keyframes cursor {
+      0%,40% { opacity:0; transform:translate(300px,206px); }
+      44%    { opacity:1; }
+      54%    { transform:translate(270px,22px); }
+      56%    { transform:translate(270px,22px) scale(.86); }
+      58%,80%{ opacity:1; transform:translate(270px,22px); }
+      86%,100%{ opacity:0; transform:translate(270px,22px); }
+    }
+    @keyframes press { 0%,55%{transform:none} 57%{transform:scale(.92)} 60%,100%{transform:none} }
+    @keyframes ring  { 0%,56%{opacity:0;transform:none} 57%{opacity:.9;transform:scale(1)} 70%,100%{opacity:0;transform:scale(1.35,1.9)} }
+
+    @media (prefers-reduced-motion: reduce) {
+      .a { animation:none !important; }
+      .cursor { opacity:0; }
+    }
+  </style>
+
+  <!-- Janela do navegador (fica fixa) -->
+  <rect class="frame" x="0.5" y="0.5" width="319" height="199" rx="8"/>
+
+  <g class="content a">
+    <!-- Navbar -->
+    <g class="nav a">
+      <circle cx="18" cy="21" r="5" fill="none" stroke="#e6e9eb" stroke-width="1.2"/>
+      <text class="txt" x="128" y="24" fill="#c9cfd3">Início</text>
+      <text class="txt" x="156" y="24" fill="#c9cfd3">Sobre</text>
+      <text class="txt" x="184" y="24" fill="#c9cfd3">Serviços</text>
+    </g>
+
+    <!-- Botão Contato + onda do clique -->
+    <rect class="ring ctr a" x="240" y="10" width="58" height="22" rx="11" fill="none" stroke="#2ee6df" stroke-width="1.2"/>
+    <g class="nav a">
+      <g class="press ctr a">
+        <rect class="cyan" x="240" y="10" width="58" height="22" rx="11"/>
+        <text class="txt" x="269" y="24" text-anchor="middle" fill="#061012" font-weight="700">Contato</text>
+      </g>
+    </g>
+
+    <!-- Hero: título, texto e botão -->
+    <rect class="white bar t1 a" x="14" y="46" width="150" height="11" rx="2"/>
+    <rect class="white bar t2 a" x="14" y="62" width="104" height="11" rx="2"/>
+    <rect class="gray bar p1 a" x="14" y="86" width="150" height="4" rx="2"/>
+    <rect class="gray bar p2 a" x="14" y="96" width="106" height="4" rx="2"/>
+    <rect class="btn2 ctr a" x="14" y="113" width="44" height="14" rx="7" fill="none" stroke="#cfd4d7" stroke-width="1.2"/>
+
+    <!-- Imagem com o arco "nascendo" -->
+    <g class="img a">
+      <rect x="178" y="44" width="128" height="88" rx="4" fill="#141a1d" stroke="#2a3034"/>
+      <g clip-path="url(#imgClip)">
+        <path class="sun a" d="M212 133 A30 30 0 0 1 272 133" fill="none" stroke="#6b7378" stroke-width="1.2"/>
+      </g>
+    </g>
+
+    <!-- Cards de serviços (fade-in ao rolar) -->
+    <g class="c1 a">
+      <rect class="panel" x="14" y="144" width="92" height="42" rx="3"/>
+      <rect class="dim" x="24" y="156" width="40" height="4" rx="2" fill="#3a4146"/>
+      <rect class="dim" x="24" y="166" width="62" height="3" rx="1.5"/>
+    </g>
+    <g class="c2 a">
+      <rect class="panel" x="114" y="144" width="92" height="42" rx="3"/>
+      <rect class="dim" x="124" y="156" width="40" height="4" rx="2" fill="#3a4146"/>
+      <rect class="dim" x="124" y="166" width="62" height="3" rx="1.5"/>
+    </g>
+    <g class="c3 a">
+      <rect class="panel" x="214" y="144" width="92" height="42" rx="3"/>
+      <rect class="dim" x="224" y="156" width="40" height="4" rx="2" fill="#3a4146"/>
+      <rect class="dim" x="224" y="166" width="62" height="3" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Cursor -->
+  <path class="cursor a" d="M0 0 L0 13 L3.5 9.8 L6 15 L8.2 14 L5.8 9 L10 9 Z"
+        fill="#ffffff" stroke="#05080a" stroke-width="0.9" stroke-linejoin="round"/>
+</svg>

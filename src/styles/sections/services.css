@@ -1,0 +1,135 @@
+.svc { background: var(--ink-0); }
+.svc__stage { height: 100svh; display: flex; align-items: center; }
+.svc__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 5vw, 96px);
+  align-items: center;
+  padding-top: var(--nav-h);
+}
+.svc__title {
+  font-size: clamp(1.1rem, 0.9rem + 0.5vw, 1.4rem);
+  font-weight: 600;
+  font-stretch: 100%;
+  letter-spacing: -0.01em;
+  color: var(--mist);
+  margin-bottom: var(--s-6);
+}
+.svc__list { display: grid; gap: 2px; }
+.svc__list button {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem);
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--dim);
+  transition: color var(--t-med) var(--ease-out);
+}
+@media (hover: hover) { .svc__list button:hover { color: var(--mist); } }
+.svc__list li[data-on='true'] button { color: var(--paper); }
+.svc__drop {
+  flex: none;
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 50%;
+  background: var(--cyan);
+  margin-right: 0;
+  transform: scale(0);
+  width: 0;
+  transition: transform var(--t-med) var(--ease-out), width var(--t-med) var(--ease-out), margin var(--t-med) var(--ease-out);
+}
+.svc__list li[data-on='true'] .svc__drop { transform: scale(1); width: 0.34em; margin-right: 0.28em; }
+
+.svc__visuals {
+  position: relative;
+  container-type: size;
+  height: var(--svc-h);
+  width: 100%;
+}
+
+.svc__right { --svc-h: clamp(200px, 34vh, 380px); --svc-w: min(100%, calc(var(--svc-h) * 1.6)); }
+.svc__visual { position: absolute; inset: 0; pointer-events: none; }
+
+.svc__detail { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--s-5); width: var(--svc-w); margin-inline: auto; }
+.svc__cta { width: 100%; justify-content: center; }
+
+.svc__texts { display: grid; width: 100%; }
+.svc__texts .svc__text { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 400ms var(--ease-out), visibility 0s linear 400ms; }
+.svc__texts .svc__text[data-on='true'] { opacity: 1; visibility: visible; transition: opacity 500ms var(--ease-out) 120ms, visibility 0s; }
+.svc__text {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--mist-2);
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+.svc__detail { margin-top: var(--s-6); }
+
+.svc__head-m { display: none; }
+
+
+@media (max-width: 959px) {
+  .svc__left { display: none; }
+  .svc__grid { grid-template-columns: minmax(0, 1fr); }
+  .svc__right { --svc-w: 100%; }
+  .svc__visuals { height: auto; aspect-ratio: 16 / 10; max-height: 42svh; margin-inline: auto; width: min(100%, calc(42svh * 1.6)); }
+  .svc__detail { width: min(100%, calc(42svh * 1.6)); }
+  .svc__text { font-size: 1rem; }
+
+  .svc__head-m {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: var(--s-5);
+  }
+  .svc__eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mist);
+  }
+  .svc__names { display: grid; width: 100%; }
+  .svc__name {
+    grid-area: 1 / 1;
+    font-size: clamp(1.9rem, 8.4vw, 2.6rem);
+    font-weight: 700;
+    font-stretch: 112%;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+    color: var(--paper);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 350ms var(--ease-out), transform 350ms var(--ease-out);
+  }
+  .svc__name[data-on='true'] { opacity: 1; transform: none; transition-delay: 80ms; }
+  .svc__dots { display: flex; gap: 6px; }
+  .svc__dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dim);
+    transition: background var(--t-med) var(--ease-out), width var(--t-med) var(--ease-out);
+  }
+  .svc__dots span[data-on='true'] { width: 18px; border-radius: 3px; background: var(--cyan); }
+
+  .svc__visuals { max-height: 32svh; width: min(100%, calc(32svh * 1.6)); }
+  .svc__detail { width: min(100%, calc(42svh * 1.6)); margin-top: var(--s-5); gap: var(--s-4); }
+}
+
+.vs-motion { width: 100%; height: 100%; object-fit: contain; user-select: none; }

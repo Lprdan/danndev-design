@@ -1,0 +1,39 @@
+.close { background: var(--ink-0); }
+.close__field {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: var(--cyan);
+  color: var(--cyan-ink);
+}
+.close__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: var(--section-y);
+}
+.close__title {
+  font-size: clamp(2rem, 0.6rem + 5.2vw, 6rem); 
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+.close__line { display: block; white-space: nowrap; font-stretch: 100%; font-weight: 500; letter-spacing: -0.045em; }
+.close__line--em { font-stretch: 125%; font-weight: 900; letter-spacing: -0.06em; }
+.close__sub {
+  margin-top: var(--s-6);
+  max-width: 44ch;
+  text-wrap: balance;
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.close__btn { --h: 64px; margin-top: var(--s-7); padding-inline: 26px 30px; font-size: 1.1rem; }
+.close__btn:focus-visible { outline-color: var(--cyan-ink); }
+.close ::selection { background: var(--cyan-ink); color: var(--cyan); }
+@media (max-width: 560px) {
+  .close__line--em { font-stretch: 108%; }
+  .close__btn { width: 100%; max-width: 360px; justify-content: center; }
+}

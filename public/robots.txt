@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cases/
+
+Sitemap: https://seudominio.com.br/sitemap.xml

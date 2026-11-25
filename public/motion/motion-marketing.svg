@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="Animação: uma busca no Google em que a empresa do cliente sobe para o primeiro lugar, aparece no mapa com 5 estrelas e ganha um anúncio patrocinado no topo">
+  <!-- Toda a animação usa o relógio nativo do SVG (um único relógio = tudo sincronizado), loop de 8s sem cortes -->
+  <defs>
+    <clipPath id="viewport">
+      <rect x="0.5" y="0.5" width="319" height="199" rx="8"/>
+    </clipPath>
+    <!-- Digitação da busca -->
+    <clipPath id="typed">
+      <rect x="36" y="14" width="0" height="16">
+        <animate attributeName="width" dur="8s" repeatCount="indefinite"
+                 values="0;0;94;94;0;0" keyTimes="0;0.03;0.18;0.84;0.89;1"/>
+      </rect>
+    </clipPath>
+    <!-- Pino de mapa (ponta em 0,0) -->
+    <path id="pin" d="M0 0 C-3 -4 -6 -7 -6 -11 A6 6 0 1 1 6 -11 C6 -7 3 -4 0 0 Z"/>
+    <path id="star" d="M0 -3.2 L0.95 -1 L3.3 -0.95 L1.5 0.6 L2.05 2.9 L0 1.65 L-2.05 2.9 L-1.5 0.6 L-3.3 -0.95 L-0.95 -1 Z"/>
+  </defs>
+
+  <style>
+    /* Paleta danndev — preto dominante, cinza, branco, ciano claro */
+    .sans { font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  </style>
+
+  <!-- Janela do navegador (fica fixa) -->
+  <rect x="0.5" y="0.5" width="319" height="199" rx="8" fill="#0b0e10" stroke="#2a3034"/>
+
+  <g clip-path="url(#viewport)">
+
+    <!-- ===== Barra de busca ===== -->
+    <rect x="14" y="12" width="186" height="20" rx="10" fill="#121719" stroke="#2a3034"/>
+    <circle cx="25" cy="21" r="3.6" fill="none" stroke="#6b7378" stroke-width="1.2"/>
+    <path d="M27.6 23.6 L30 26" stroke="#6b7378" stroke-width="1.2" stroke-linecap="round"/>
+    <text class="sans" x="37" y="25" font-size="8" fill="#e6e9eb" clip-path="url(#typed)">barbearia perto de mim</text>
+    <!-- Cursor de digitação -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                        values="0 0;0 0;94 0;94 0;0 0;0 0" keyTimes="0;0.03;0.18;0.84;0.89;1"/>
+      <line x1="37" y1="16.5" x2="37" y2="26.5" stroke="#2ee6df" stroke-width="1.2">
+        <animate attributeName="opacity" values="1;0" dur="1s" calcMode="discrete" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- ===== Página de resultados (aparece depois da busca) ===== -->
+    <g opacity="0">
+      <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+               values="0;0;1;1;0;0" keyTimes="0;0.19;0.23;0.84;0.89;1"/>
+
+      <!-- Resultado concorrente 1 (começa no 1º lugar) -->
+      <g transform="translate(0 44)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 0;0 0;0 32;0 32;0 64;0 64;0 0;0 0" keyTimes="0;0.26;0.42;0.56;0.64;0.90;0.901;1"
+                            calcMode="spline" keySplines="0 0 1 1;.65 0 .25 1;0 0 1 1;.65 0 .25 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+          <circle cx="20" cy="5" r="3.5" fill="#3a4146"/>
+          <rect x="28" y="3.5" width="44" height="3" rx="1.5" fill="#2a3034"/>
+          <rect x="14" y="11" width="118" height="5" rx="2" fill="#6b7378"/>
+          <rect x="14" y="20" width="160" height="3" rx="1.5" fill="#2a3034"/>
+        </g>
+      </g>
+      <!-- Resultado concorrente 2 -->
+      <g transform="translate(0 76)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 0;0 0;0 32;0 32;0 64;0 64;0 0;0 0" keyTimes="0;0.26;0.42;0.56;0.64;0.90;0.901;1"
+                            calcMode="spline" keySplines="0 0 1 1;.65 0 .25 1;0 0 1 1;.65 0 .25 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+          <circle cx="20" cy="5" r="3.5" fill="#3a4146"/>
+          <rect x="28" y="3.5" width="38" height="3" rx="1.5" fill="#2a3034"/>
+          <rect x="14" y="11" width="100" height="5" rx="2" fill="#6b7378"/>
+          <rect x="14" y="20" width="150" height="3" rx="1.5" fill="#2a3034"/>
+        </g>
+      </g>
+      <!-- Resultado concorrente 3 -->
+      <g transform="translate(0 108)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 0;0 0;0 32;0 32;0 64;0 64;0 0;0 0" keyTimes="0;0.26;0.42;0.56;0.64;0.90;0.901;1"
+                            calcMode="spline" keySplines="0 0 1 1;.65 0 .25 1;0 0 1 1;.65 0 .25 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+          <circle cx="20" cy="5" r="3.5" fill="#3a4146"/>
+          <rect x="28" y="3.5" width="50" height="3" rx="1.5" fill="#2a3034"/>
+          <rect x="14" y="11" width="126" height="5" rx="2" fill="#6b7378"/>
+          <rect x="14" y="20" width="140" height="3" rx="1.5" fill="#2a3034"/>
+        </g>
+      </g>
+
+      <!-- Anúncio patrocinado do cliente (Google Ads) — entra no topo -->
+      <g transform="translate(0 44)">
+        <g opacity="0">
+          <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                   values="0;0;1;1;0;0" keyTimes="0;0.58;0.66;0.89;0.90;1"/>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 -6;0 -6;0 0;0 0;0 -6;0 -6" keyTimes="0;0.58;0.66;0.89;0.90;1"
+                            calcMode="spline" keySplines="0 0 1 1;.2 .7 .2 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+          <rect x="14" y="0.5" width="38" height="9" rx="4.5" fill="none" stroke="#2ee6df"/>
+          <text class="sans" x="33" y="7" font-size="5.4" font-weight="700" text-anchor="middle" fill="#2ee6df">Patrocinado</text>
+          <rect x="58" y="3.5" width="44" height="3" rx="1.5" fill="#2ee6df" opacity=".55"/>
+          <rect x="14" y="13" width="128" height="5" rx="2" fill="#e6e9eb"/>
+          <rect x="14" y="22" width="156" height="3" rx="1.5" fill="#3a4146"/>
+        </g>
+      </g>
+
+      <!-- Resultado do CLIENTE (SEO): começa em 4º e sobe para o 1º -->
+      <g transform="translate(0 140)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 0;0 0;0 -96;0 -96;0 -64;0 -64;0 0;0 0" keyTimes="0;0.26;0.42;0.56;0.64;0.90;0.901;1"
+                            calcMode="spline" keySplines="0 0 1 1;.65 0 .25 1;0 0 1 1;.65 0 .25 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+          <rect x="8" y="-4" width="192" height="31" rx="5" fill="#121719" stroke="#2ee6df" stroke-opacity=".4"/>
+          <circle cx="20" cy="5" r="3.5" fill="#2ee6df"/>
+          <rect x="28" y="3.5" width="48" height="3" rx="1.5" fill="#2ee6df" opacity=".55"/>
+          <rect x="14" y="11" width="126" height="5" rx="2" fill="#e6e9eb"/>
+          <rect x="14" y="20" width="150" height="3" rx="1.5" fill="#3a4146"/>
+          <!-- Selo de topo -->
+          <g opacity="0">
+            <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                     values="0;0;1;1;0;0" keyTimes="0;0.42;0.46;0.89;0.90;1"/>
+            <rect x="150" y="7" width="42" height="12" rx="6" fill="#2ee6df"/>
+            <path d="M157 15.5 V10.5 M154.8 12.6 L157 10.4 L159.2 12.6" fill="none" stroke="#061012" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text class="sans" x="175" y="15.4" font-size="6.4" font-weight="700" text-anchor="middle" fill="#061012">1º lugar</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ===== Google Meu Negócio: mapa com pinos + avaliação ===== -->
+      <rect x="208" y="44" width="98" height="78" rx="5" fill="#141a1d" stroke="#2a3034"/>
+      <path d="M208 70 H306 M208 100 L306 88 M240 44 V122 M282 44 L272 122" stroke="#1e2629" stroke-width="3"/>
+      <use href="#pin" transform="translate(230 74)" fill="#4a5156"/>
+      <use href="#pin" transform="translate(288 66)" fill="#4a5156"/>
+      <use href="#pin" transform="translate(286 110)" fill="#4a5156"/>
+      <!-- Pino do cliente: fica ciano e pula -->
+      <g transform="translate(256 100)">
+        <g>
+          <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                            values="0 0;0 0;0 -7;0 0;0 -3;0 0;0 0" keyTimes="0;0.44;0.48;0.52;0.545;0.57;1"/>
+          <use href="#pin" fill="#4a5156"/>
+          <g opacity="0">
+            <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                     values="0;0;1;1;0;0" keyTimes="0;0.44;0.47;0.89;0.90;1"/>
+            <circle cx="0" cy="-11" r="11" fill="#2ee6df" opacity=".18"/>
+            <use href="#pin" fill="#2ee6df"/>
+          </g>
+          <circle cx="0" cy="-11" r="2.2" fill="#0b0e10"/>
+        </g>
+      </g>
+
+      <!-- Ficha do negócio com estrelas -->
+      <rect x="208" y="128" width="98" height="30" rx="5" fill="#121719" stroke="#2a3034"/>
+      <rect x="216" y="135" width="56" height="5" rx="2" fill="#e6e9eb"/>
+      <g fill="#3a4146">
+        <use href="#star" x="220" y="149"/><use href="#star" x="229" y="149"/><use href="#star" x="238" y="149"/><use href="#star" x="247" y="149"/><use href="#star" x="256" y="149"/>
+      </g>
+      <g fill="#2ee6df">
+        <use href="#star" x="220" y="149" opacity="0"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.48;0.50;0.89;0.90;1"/></use>
+        <use href="#star" x="229" y="149" opacity="0"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.50;0.52;0.89;0.90;1"/></use>
+        <use href="#star" x="238" y="149" opacity="0"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.52;0.54;0.89;0.90;1"/></use>
+        <use href="#star" x="247" y="149" opacity="0"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.54;0.56;0.89;0.90;1"/></use>
+        <use href="#star" x="256" y="149" opacity="0"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.56;0.58;0.89;0.90;1"/></use>
+      </g>
+      <text class="sans" x="266" y="151.3" font-size="6.4" font-weight="700" fill="#e6e9eb" opacity="0">5,0<animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.58;0.60;0.89;0.90;1"/></text>
+
+      <!-- Segunda ficha (concorrente) -->
+      <rect x="208" y="164" width="98" height="24" rx="5" fill="#0f1416" stroke="#20272a"/>
+      <rect x="216" y="171" width="44" height="4" rx="2" fill="#3a4146"/>
+      <rect x="216" y="179" width="64" height="3" rx="1.5" fill="#2a3034"/>
+    </g>
+  </g>
+</svg>
